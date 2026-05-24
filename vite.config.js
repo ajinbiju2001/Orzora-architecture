@@ -14,7 +14,7 @@ export default defineConfig({
               pathname = pathname.slice(0, -1);
             }
             if (pathname !== '/' && !pathname.includes('.') && !pathname.startsWith('/@')) {
-              const cleanPaths = ['/works', '/products', '/contact', '/tropical-paradise', '/home', '/arcadia'];
+              const cleanPaths = ['/works', '/products', '/contact', '/tropical-paradise', '/home', '/arcadia', '/about'];
               if (cleanPaths.includes(pathname)) {
                 req.url = pathname + '.html' + url.search;
               }
@@ -35,6 +35,7 @@ export default defineConfig({
         contact: './contact.html',
         'tropical-paradise': './tropical-paradise.html',
         arcadia: './arcadia.html',
+        about: './about.html',
       },
     },
   },
