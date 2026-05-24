@@ -1,0 +1,10 @@
+<svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Subtle Architectural Guidelines (Blueprint Style) -->
+  <circle cx="256" cy="256" r="220" stroke="#c8a97e" stroke-width="1.5" stroke-opacity="0.15" />
+  <rect x="96" y="96" width="320" height="320" stroke="#c8a97e" stroke-width="1.5" stroke-opacity="0.15" />
+  <line x1="64" y1="256" x2="448" y2="256" stroke="#c8a97e" stroke-width="1.5" stroke-opacity="0.25" stroke-dasharray="6 6" />
+  <line x1="256" y1="64" x2="256" y2="448" stroke="#c8a97e" stroke-width="1.5" stroke-opacity="0.25" stroke-dasharray="6 6" />
+
+  <!-- Elegant Serif Monogram "O" in Primary Gold -->
+  <path fill="#c8a97e" fill-rule="evenodd" clip-rule="evenodd" d="M 256 50 C 370 50 450 142 450 256 C 450 370 370 462 256 462 C 142 462 62 370 62 256 C 62 142 142 50 256 50 Z M 256 100 C 190 100 160 170 160 256 C 160 342 190 412 256 412 C 322 412 352 342 352 256 C 352 170 322 100 256 100 Z" />
+</svg>

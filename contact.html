@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contact | ORZORA ARCHITECTURE</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #121414;
+      color: #e3e2e2;
+    }
+    .architectural-grid {
+      background-image: linear-gradient(rgba(200, 169, 126, 0.05) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(200, 169, 126, 0.05) 1px, transparent 1px);
+      background-size: 100px 100px;
+      animation: gridMove 120s linear infinite;
+    }
+    @keyframes gridMove {
+      from { background-position: 0 0; }
+      to { background-position: 500px 500px; }
+    }
+    .form-glass {
+      background: rgba(18, 20, 20, 0.85);
+      backdrop-filter: blur(25px);
+      border: 1px solid rgba(200, 169, 126, 0.15);
+      overflow: hidden;
+    }
+    .form-glass::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -150%;
+      width: 150%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(229, 196, 151, 0.05), transparent);
+      transition: none;
+      pointer-events: none;
+      transform: skewX(-20deg);
+    }
+    .form-glass:hover::before {
+      left: 150%;
+      transition: left 2.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .blueprint-overlay {
+      -webkit-mask-image: linear-gradient(to right, black, transparent);
+              mask-image: linear-gradient(to right, black, transparent);
+      opacity: 0.12;
+      pointer-events: none;
+      transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+    }
+    .input-group label {
+      transition: color 0.4s ease, text-shadow 0.4s ease;
+    }
+    .input-group input:focus + label, 
+    .input-group select:focus + label,
+    .input-group textarea:focus + label {
+      color: #e5c497;
+      text-shadow: 0 0 8px rgba(229, 196, 151, 0.3);
+    }
+    .input-group input, .input-group select, .input-group textarea {
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+    .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
+      box-shadow: 0 4px 12px -4px rgba(229, 196, 151, 0.1);
+    }
+    .btn-metallic {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .btn-metallic::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(229, 196, 151, 0.4), transparent);
+      transition: 0.6s;
+      z-index: 1;
+    }
+    .btn-metallic:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -10px rgba(229, 196, 151, 0.3);
+    }
+    .btn-metallic:hover::before {
+      left: 100%;
+    }
+    .bg-shadow-gradient {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), transparent 0%, #121414 70%);
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: 1;
+    }
+  </style>
+  <script type="module" crossorigin src="./assets/main-Dem3dQWe.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-BjaNh7Dc.css">
+</head>
+<body class="overflow-x-hidden font-body-md bg-surface text-on-surface">
+  
+  <!-- Paper Texture Overlay for Print-Inspired Aesthetic -->
+  <div class="paper-overlay"></div>
+
+  <!-- Background Atmosphere -->
+  <div class="fixed inset-0 bg-shadow-gradient"></div>
+  <div class="fixed inset-0 architectural-grid z-0 opacity-40"></div>
+  <div class="fixed top-1/4 -left-20 w-96 h-96 bg-primary/10 blur-[150px] rounded-full z-0 animate-pulse transition-transform duration-1000 ease-out" id="glow-element"></div>
+
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 left-0 w-full z-[100] flex justify-between items-center px-margin-edge py-6 bg-transparent border-b border-outline-variant/30 backdrop-blur-sm transition-all duration-500">
+    <div class="flex items-center gap-3">
+      <img alt="ORZORA Architecture Logo" class="w-auto object-contain brightness-110 h-[80px] transition-all duration-500" src="assets/navbar-logo.png" style="filter: brightness(1.1) contrast(1.1);">
+    </div>
+    
+    <div class="hidden lg:flex gap-gutter items-center h-full">
+      <a class="text-on-surface hover:text-primary transition-colors font-label-caps text-label-caps" href="index.html">HOME</a>
+      <a class="text-on-surface hover:text-primary transition-colors font-label-caps text-label-caps" href="works.html">OUR WORKS</a>
+      <a class="text-on-surface hover:text-primary transition-colors font-label-caps text-label-caps" href="products.html">PRODUCTS</a>
+      <a class="text-primary hover:text-primary transition-colors font-label-caps text-label-caps font-semibold" href="contact.html">CONTACT</a>
+    </div>
+    
+    <button onclick="document.getElementById('form-container').scrollIntoView({ behavior: 'smooth', block: 'center' })" class="reveal-btn relative px-8 py-3 border border-primary text-primary font-label-caps text-label-caps transition-all duration-300 z-10">
+      ENQUIRE
+    </button>
+  </nav>
+
+  <main class="relative z-10 min-h-screen flex flex-col md:flex-row px-margin-edge pt-40 pb-section-gap">
+    <!-- Left Side: Context & Branding -->
+    <div class="w-full md:w-1/2 flex flex-col justify-center pr-0 md:pr-16 relative reveal-on-scroll" data-delay="200">
+      <!-- Blueprint Reference Image with Parallax -->
+      <div class="absolute inset-0 blueprint-overlay" id="blueprint-parallax">
+        <img alt="Architectural drawings and technical blueprints" class="w-full h-full object-cover grayscale brightness-[0.25]" src="assets/technical-drawings.png">
+      </div>
+      
+      <div class="relative">
+        <span class="font-label-caps text-label-caps text-primary tracking-[0.3em] block mb-6">LET’S DISCUSS YOUR VISION</span>
+        <h1 class="font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-on-surface mb-gutter max-w-xl leading-tight">
+          Start Your Architectural <span class="italic text-primary">Journey</span> With ORZORA
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-section-gap max-w-lg">
+          We collaborate with visionary clients to create timeless architectural experiences through precision, innovation, and spatial intelligence.
+        </p>
+        
+        <div class="space-y-12">
+          <div class="flex gap-gutter items-start">
+            <div class="w-px h-12 bg-primary mt-1"></div>
+            <div>
+              <span class="font-label-caps text-label-caps text-outline block mb-2">CONTACT DETAILS</span>
+              <p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                inquiries@orzora.studio<br>
+                +1 (212) 555-0198
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-gutter items-start">
+            <div class="w-px h-12 bg-primary mt-1"></div>
+            <div>
+              <span class="font-label-caps text-label-caps text-outline block mb-2">WORKING HOURS</span>
+              <p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                Monday — Friday<br>
+                09:00 AM — 06:00 PM EST
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right Side: Inquiry Form -->
+    <div class="w-full md:w-1/2 mt-section-gap md:mt-0 flex items-center justify-center reveal-on-scroll" data-delay="500">
+      <div class="form-glass p-8 md:p-12 w-full max-w-2xl relative shadow-2xl transition-transform duration-700 ease-out" id="form-container">
+        <!-- Geometric Corner Accents with Parallax -->
+        <div class="absolute -top-1 -left-1 w-8 h-8 border-t border-l border-primary accent-parallax"></div>
+        <div class="absolute -bottom-1 -right-1 w-8 h-8 border-b border-r border-primary accent-parallax"></div>
+        
+        <form class="space-y-8" onsubmit="event.preventDefault(); alert('Inquiry Sent Successfully.');">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+            <div class="relative group input-group">
+              <label class="font-label-caps text-label-caps text-outline block mb-2">FULL NAME</label>
+              <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md" placeholder="Full Name" type="text" required>
+            </div>
+            <div class="relative group input-group">
+              <label class="font-label-caps text-label-caps text-outline block mb-2">EMAIL ADDRESS</label>
+              <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md" placeholder="Email Address" type="email" required>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+            <div class="relative group input-group">
+              <label class="font-label-caps text-label-caps text-outline block mb-2">PHONE NUMBER</label>
+              <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md" placeholder="Phone Number" type="tel">
+            </div>
+            <div class="relative group input-group">
+              <label class="font-label-caps text-label-caps text-outline block mb-2">PROJECT TYPE</label>
+              <select class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-primary text-on-surface appearance-none font-body-md text-body-md">
+                <option class="bg-surface text-on-surface">Luxury Residence</option>
+                <option class="bg-surface text-on-surface">Interior Architecture</option>
+                <option class="bg-surface text-on-surface">Commercial Space</option>
+                <option class="bg-surface text-on-surface">Hospitality</option>
+                <option class="bg-surface text-on-surface">Concept Design</option>
+              </select>
+              <span class="material-symbols-outlined absolute right-0 bottom-3 text-outline pointer-events-none">expand_more</span>
+            </div>
+          </div>
+          
+          <div class="relative group input-group">
+            <label class="font-label-caps text-label-caps text-outline block mb-2">PROJECT BUDGET</label>
+            <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md" placeholder="Project Budget" type="text">
+          </div>
+          
+          <div class="relative group input-group">
+            <label class="font-label-caps text-label-caps text-outline block mb-2">MESSAGE</label>
+            <textarea class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md resize-none" placeholder="Message" rows="4" required></textarea>
+          </div>
+          
+          <button class="w-full py-6 border border-primary btn-metallic group transition-all" type="submit">
+            <span class="relative z-10 font-label-caps text-label-caps text-primary tracking-[0.4em] group-hover:text-surface transition-colors duration-500">SCHEDULE CONSULTATION</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full px-margin-edge bg-surface border-t border-outline-variant/30 relative z-20 pt-0">
+    <div class="relative w-full h-[60vh] mb-section-gap overflow-hidden">
+      <img alt="Ultra-luxury modern architecture" class="w-full h-full object-cover brightness-[0.7]" src="assets/hero-bg.png">
+      <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-transparent"></div>
+      <div class="absolute inset-0 flex flex-col justify-end px-margin-edge pb-gutter">
+        <h2 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface max-w-4xl">
+          Defining the <span class="text-primary italic font-light">Future</span> of Space
+        </h2>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter lg:gap-section-gap mb-16">
+      <div class="col-span-1">
+        <img alt="ORZORA Logo" class="h-[80px] w-auto object-contain brightness-110 mb-gutter" src="assets/footer-logo.png">
+        <p class="text-on-surface-variant font-body-md max-w-xs leading-relaxed">
+          Crafting architectural landmarks that transcend time through innovative design and precision engineering.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-label-caps text-label-caps text-primary mb-gutter tracking-widest">NAVIGATE</h4>
+        <ul class="space-y-4">
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="index.html">HOME</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="works.html">OUR WORKS</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="products.html">PRODUCTS</a></li>
+          <li><a class="text-primary transition-colors font-label-caps text-label-caps font-semibold" href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-caps text-label-caps text-primary mb-gutter tracking-widest">SOCIAL</h4>
+        <ul class="space-y-4">
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Instagram</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">LinkedIn</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Pinterest</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-caps text-label-caps text-primary mb-gutter tracking-widest">LEGAL</h4>
+        <ul class="space-y-4">
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Privacy Policy</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Terms of Service</a></li>
+          <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="w-full border-t border-outline-variant/20 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-outline">
+      <span class="font-label-caps text-[10px] tracking-widest">© 2026 ORZORA ARCHITECTURE. ALL RIGHTS RESERVED.</span>
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[20px]">architecture</span>
+        <span class="font-label-caps tracking-widest text-[10px]">BUILT FOR EXCELLENCE</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Interactive Effects
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      
+      // Update shadow gradient position
+      document.documentElement.style.setProperty('--mouse-x', `${(x / window.innerWidth) * 100}%`);
+      document.documentElement.style.setProperty('--mouse-y', `${(y / window.innerHeight) * 100}%`);
+
+      // Parallax and Glow movement
+      const glow = document.getElementById('glow-element');
+      const blueprint = document.getElementById('blueprint-parallax');
+      const form = document.getElementById('form-container');
+      const accents = document.querySelectorAll('.accent-parallax');
+
+      const moveX = (x - window.innerWidth / 2) * 0.02;
+      const moveY = (y - window.innerHeight / 2) * 0.02;
+
+      if (glow) {
+        glow.style.transform = `translate(${moveX * 1.5}px, ${moveY * 1.5}px)`;
+      }
+      if (blueprint) {
+        blueprint.style.transform = `translate(${moveX * -0.5}px, ${moveY * -0.5}px)`;
+      }
+      if (form) {
+        // Very subtle tilt on form
+        const rotateY = (x - window.innerWidth / 2) * 0.005;
+        const rotateX = (y - window.innerHeight / 2) * -0.005;
+        form.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      }
+      
+      accents.forEach(acc => {
+        acc.style.transform = `translate(${moveX * 0.8}px, ${moveY * 0.8}px)`;
+      });
+    });
+  </script>
+
+  <!-- Script Entry Point -->
+</body>
+</html>
