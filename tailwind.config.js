@@ -3,9 +3,12 @@ module.exports = {
   darkMode: "class",
   content: [
     "./index.html",
+    "./home.html",
     "./works.html",
     "./products.html",
     "./contact.html",
+    "./tropical-paradise.html",
+    "./arcadia.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
@@ -44,7 +47,11 @@ module.exports = {
         "display-lg": ["Bodoni Moda", "serif"],
         "headline-lg": ["Bodoni Moda", "serif"],
         "label-caps": ["Hanken Grotesk", "sans-serif"],
-        "body-md": ["Hanken Grotesk", "sans-serif"]
+        "body-md": ["Hanken Grotesk", "sans-serif"],
+        "headline": ["Bodoni Moda", "serif"],
+        "display": ["Bodoni Moda", "serif"],
+        "body": ["Hanken Grotesk", "sans-serif"],
+        "label": ["Hanken Grotesk", "sans-serif"]
       },
       fontSize: {
         "headline-lg-mobile": ["36px", { lineHeight: "1.2", fontWeight: "400" }],
@@ -63,3 +70,4 @@ module.exports = {
     require('@tailwindcss/container-queries'),
   ],
 }
+
