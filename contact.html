@@ -50,15 +50,6 @@
       pointer-events: none;
       transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1);
     }
-    .reveal-on-scroll {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1.5s cubic-bezier(0.2, 0, 0.2, 1), transform 1.5s cubic-bezier(0.2, 0, 0.2, 1);
-    }
-    .reveal-on-scroll.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
     .input-group label {
       transition: color 0.4s ease, text-shadow 0.4s ease;
     }
@@ -106,6 +97,9 @@
   </style>
 </head>
 <body class="overflow-x-hidden font-body-md bg-surface text-on-surface">
+  
+  <!-- Paper Texture Overlay for Print-Inspired Aesthetic -->
+  <div class="paper-overlay"></div>
 
   <!-- Background Atmosphere -->
   <div class="fixed inset-0 bg-shadow-gradient"></div>
@@ -132,7 +126,7 @@
 
   <main class="relative z-10 min-h-screen flex flex-col md:flex-row px-margin-edge pt-40 pb-section-gap">
     <!-- Left Side: Context & Branding -->
-    <div class="w-full md:w-1/2 flex flex-col justify-center pr-0 md:pr-16 relative reveal-on-scroll active" data-delay="0.2">
+    <div class="w-full md:w-1/2 flex flex-col justify-center pr-0 md:pr-16 relative reveal-on-scroll" data-delay="200">
       <!-- Blueprint Reference Image with Parallax -->
       <div class="absolute inset-0 blueprint-overlay" id="blueprint-parallax">
         <img alt="Architectural drawings and technical blueprints" class="w-full h-full object-cover grayscale brightness-[0.25]" src="/assets/technical-drawings.png">
@@ -173,7 +167,7 @@
     </div>
     
     <!-- Right Side: Inquiry Form -->
-    <div class="w-full md:w-1/2 mt-section-gap md:mt-0 flex items-center justify-center reveal-on-scroll active" data-delay="0.5">
+    <div class="w-full md:w-1/2 mt-section-gap md:mt-0 flex items-center justify-center reveal-on-scroll" data-delay="500">
       <div class="form-glass p-8 md:p-12 w-full max-w-2xl relative shadow-2xl transition-transform duration-700 ease-out" id="form-container">
         <!-- Geometric Corner Accents with Parallax -->
         <div class="absolute -top-1 -left-1 w-8 h-8 border-t border-l border-primary accent-parallax"></div>
@@ -284,24 +278,6 @@
   </footer>
 
   <script>
-    // Intersection Observer for Scroll Reveals
-    const observerOptions = {
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.getAttribute('data-delay') || 0;
-          setTimeout(() => {
-            entry.target.classList.add('active');
-          }, delay * 1000);
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
-
     // Interactive Effects
     document.addEventListener('mousemove', (e) => {
       const x = e.clientX;
@@ -338,5 +314,8 @@
       });
     });
   </script>
+
+  <!-- Script Entry Point -->
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
