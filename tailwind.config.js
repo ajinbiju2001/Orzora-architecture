@@ -5,6 +5,7 @@ module.exports = {
     "./index.html",
     "./works.html",
     "./products.html",
+    "./contact.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
