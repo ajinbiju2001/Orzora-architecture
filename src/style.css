@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #121414;
+    color: #e3e2e2;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar for Luxury Aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0e0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #c8a97e40;
+  border-radius: 0px;
+  transition: background 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c8a97e80;
+}
+
+/* Fine structural grid backdrop */
+.fine-grid {
+  background-image: 
+    linear-gradient(to right, rgba(200, 169, 126, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(200, 169, 126, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Subtle paper texture overlay for an editorial feel */
+.paper-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.015;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Parallax backgrounds */
+.parallax-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Fallback for touch devices where background-attachment: fixed is laggy */
+@media (hover: none) {
+  .parallax-bg {
+    background-attachment: scroll;
+  }
+}
+
+/* Custom Premium Buttons */
+.reveal-btn {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 0.2s ease;
+}
+
+.reveal-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #c8a97e;
+  transition: width 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;
+}
+
+.reveal-btn:hover::after {
+  width: 100%;
+}
+
+.reveal-btn:hover {
+  color: #121414;
+  border-color: #c8a97e;
+}
+
+.reveal-btn:active {
+  opacity: 0.8;
+  transform: scale(0.97);
+}
+
+/* Project Cards Overlay */
+.card-overlay {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reveal-card:hover .card-overlay {
+  opacity: 1;
+}
+
+
+
+/* Mega Menu Styles with beautiful slide down and fade-in */
+.mega-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 15px);
+  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+              transform 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+              visibility 0.4s;
+  pointer-events: none;
+}
+
+.nav-item:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+/* Ambient glow (light leak) */
+.light-leak {
+  background: radial-gradient(circle at 50% 50%, rgba(200, 169, 126, 0.12), transparent 70%);
+}
+
+/* Intersection Observer Transitions */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1), 
+              transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* On-load animations for hero section */
+.fade-in-on-load {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1), 
+              transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.fade-in-on-load.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scrolled Nav Glass Effects and Layout adjustments */
+nav.scrolled {
+  background-color: rgba(18, 20, 20, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: rgba(78, 69, 59, 0.3);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+nav.scrolled img {
+  height: 64px;
+}
+
+/* Works Page specific styles */
+.text-reveal {
+  background: linear-gradient(to right, #c8a97e 50%, #121414 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.group:hover .text-reveal {
+  background-position: 0 0;
+  color: #121414;
+}
+
+.scroll-indicator-line {
+  height: 80px;
+  width: 1px;
+  background: linear-gradient(to bottom, #c8a97e 50%, transparent 50%);
+  background-size: 100% 200%;
+  animation: scrollLine 2s infinite;
+}
+
+@keyframes scrollLine {
+  0% { background-position: 0 100%; }
+  50% { background-position: 0 0%; }
+  100% { background-position: 0 -100%; }
+}
+
+.blueprint-grid {
+  background-image: 
+    linear-gradient(to right, rgba(200, 169, 126, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(200, 169, 126, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.gold-underline {
+  position: relative;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #c8a97e;
+  transition: width 0.4s ease;
+}
+
+.group:hover .gold-underline::after {
+  width: 100%;
+}

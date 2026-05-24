@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Works | ORZORA Architecture</title>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+</head>
+<body class="font-body-md overflow-x-hidden bg-surface text-on-surface">
+  
+  <!-- Paper Texture Overlay for Print-Inspired Aesthetic -->
+  <div class="paper-overlay"></div>
+
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 left-0 w-full z-[100] flex justify-between items-center px-margin-edge py-6 bg-transparent border-b border-transparent transition-all duration-500">
+    <div class="flex items-center gap-3">
+      <img alt="ORZORA Architecture Logo" class="w-auto object-contain brightness-110 h-[80px] transition-all duration-500" src="/assets/navbar-logo.png" style="filter: brightness(1.1) contrast(1.1);">
+    </div>
+    
+    <div class="hidden lg:flex gap-gutter items-center h-full">
+      <a class="text-on-surface hover:text-primary transition-colors font-label-caps text-label-caps" href="index.html">HOME</a>
+      <a class="text-on-surface hover:text-primary transition-colors font-label-caps text-label-caps" href="works.html">OUR WORKS</a>
+      <a class="text-on-surface hover:text-primary transition-colors font-label-caps text-label-caps" href="products.html">PRODUCTS</a>
+      <a class="text-on-surface hover:text-primary transition-colors font-label-caps text-label-caps" href="#">CONTACT</a>
+    </div>
+    
+    <button class="reveal-btn relative px-8 py-3 border border-primary text-primary font-label-caps text-label-caps transition-all duration-300 z-10">
+      ENQUIRE
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen w-full flex flex-col items-center justify-center text-center px-margin-edge overflow-hidden bg-surface">
+    <!-- Floating Light Leak Decor -->
+    <div class="absolute -top-[20%] -left-[10%] w-[60%] h-[80%] light-leak rounded-full blur-[100px] pointer-events-none fade-in-on-load" data-delay="100"></div>
+    
+    <div class="absolute inset-0 z-0 opacity-50 fade-in-on-load" data-delay="200">
+      <div class="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background z-10"></div>
+      <img alt="Hero Background" class="w-full h-full object-cover transition-transform duration-[3000ms] hover:scale-105 brightness-[0.7] contrast-105" src="/assets/works-hero.png">
+    </div>
+    
+    <div class="relative z-20 max-w-5xl flex flex-col items-center">
+      <span class="font-label-caps text-label-caps text-primary mb-4 tracking-[0.6em] uppercase fade-in-on-load" data-delay="300">Selected Works</span>
+      <h1 class="font-display-lg text-[48px] lg:text-[72px] text-on-surface mb-gutter leading-tight fade-in-on-load" data-delay="400">
+        Spaces Designed To Be Experienced
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto opacity-70 fade-in-on-load" data-delay="500">
+        Crafting refined environments that transcend structure, focusing on the emotional resonance of spatial geometry and light.
+      </p>
+    </div>
+    
+    <div class="absolute bottom-margin-edge flex flex-col items-center gap-4 z-20 fade-in-on-load" data-delay="650">
+      <span class="font-label-caps text-[10px] tracking-[0.4em] text-primary/60">SCROLL</span>
+      <div class="scroll-indicator-line"></div>
+    </div>
+  </section>
+
+  <!-- Works Experience: Project 01 -->
+  <section class="w-full py-section-gap px-margin-edge bg-surface reveal-on-scroll">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+      <div class="lg:col-span-7 relative group overflow-hidden">
+        <div class="aspect-[16/10] overflow-hidden">
+          <img alt="Tropical Paradise" class="w-full h-full object-cover transition-all duration-[1200ms] group-hover:scale-105 contrast-[1.02] brightness-95 group-hover:brightness-105" src="/assets/project-tropical.png">
+        </div>
+        <div class="absolute top-4 left-4 font-label-caps text-label-caps bg-surface/90 border border-primary/20 text-primary px-4 py-2">01 / 03</div>
+      </div>
+      
+      <div class="lg:col-span-5 lg:pl-gutter">
+        <span class="font-label-caps text-label-caps text-outline mb-4 block tracking-widest">THEMED CAFÉ — CALICUT, KERALA</span>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-gutter">Tropical Paradise</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-gutter leading-relaxed opacity-85">
+          A tropical architectural retreat blending organic materials with modernist precision. This space utilizes passive cooling and open ventilation to create an atmospheric sanctuary amidst the urban landscape.
+        </p>
+        <div class="group inline-flex items-center gap-4 cursor-pointer">
+          <span class="w-12 h-fine-line bg-primary transition-all duration-500 group-hover:w-20"></span>
+          <span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">View Case Study</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 02: Arcadia -->
+  <section class="w-full py-section-gap px-margin-edge bg-surface-container-lowest blueprint-grid border-y border-primary/10 reveal-on-scroll">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+      <div class="lg:col-span-5 order-2 lg:order-1 lg:pr-gutter">
+        <span class="font-label-caps text-label-caps text-outline mb-4 block tracking-widest uppercase">Low Rise Apartment</span>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-gutter italic">Arcadia</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-gutter leading-relaxed opacity-85">
+          Modern residential environment defined by symmetry and cinematic lighting. Arcadia redefines luxury living through sharp geometry and a dialogue between steel, glass, and shadow.
+        </p>
+        <div class="flex gap-12 mt-12">
+          <div class="flex flex-col border-l border-primary/20 pl-6">
+            <span class="font-label-caps text-[10px] text-outline tracking-widest mb-1">HEIGHT</span>
+            <span class="font-headline-sm text-headline-sm text-primary">18m</span>
+          </div>
+          <div class="flex flex-col border-l border-primary/20 pl-6">
+            <span class="font-label-caps text-[10px] text-outline tracking-widest mb-1">UNITS</span>
+            <span class="font-headline-sm text-headline-sm text-primary">12</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="lg:col-span-7 order-1 lg:order-2 relative group">
+        <div class="relative z-10 aspect-[16/10] overflow-hidden">
+          <img alt="Arcadia" class="w-full h-full object-cover transition-all duration-[1200ms] group-hover:scale-105 contrast-[1.02] brightness-95 group-hover:brightness-105" src="/assets/project-arcadia.png">
+        </div>
+        <!-- Technical Overlay -->
+        <div class="absolute -top-gutter -right-unit z-20 flex flex-col items-end opacity-30">
+          <span class="font-label-caps text-[8px] text-primary rotate-90 origin-right whitespace-nowrap mb-24 tracking-[0.3em] uppercase">Technical Specification A-104</span>
+          <div class="w-fine-line h-40 bg-primary"></div>
+        </div>
+        <div class="absolute bottom-4 right-4 font-label-caps text-label-caps bg-surface/90 border border-primary/20 text-primary px-4 py-2">02 / 03</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project 03: Working Drawings -->
+  <section class="w-full py-section-gap px-margin-edge bg-surface reveal-on-scroll">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-section-gap">
+        <span class="font-label-caps text-label-caps text-outline mb-4 block tracking-widest uppercase">Architectural Documentation</span>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface">Precision in Execution</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-section-gap items-center">
+        <div class="relative h-[600px] group">
+          <div class="absolute inset-0 bg-surface-container-high border border-primary/10 transform translate-x-8 translate-y-8 transition-transform duration-700 group-hover:translate-x-4 group-hover:translate-y-4"></div>
+          <img alt="Technical Documentation" class="absolute inset-0 w-full h-full object-cover z-10 border border-primary/20 transition-all duration-[1200ms] group-hover:scale-102 contrast-[1.02] brightness-95" src="/assets/technical-drawings.png">
+        </div>
+        
+        <div class="lg:pl-gutter">
+          <h3 class="font-headline-md text-headline-md text-primary mb-gutter">Working Drawings</h3>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-gutter leading-relaxed opacity-85">
+            Our technical department produces precision-driven documentation that bridges the gap between vision and reality. Every line in our blueprints is a commitment to structural integrity and architectural finesse.
+          </p>
+          <ul class="space-y-6">
+            <li class="flex items-center gap-4 text-on-surface group">
+              <span class="material-symbols-outlined text-primary text-xl">architecture</span>
+              <span class="font-label-caps text-label-caps tracking-widest group-hover:text-primary transition-colors">Structural Drafting</span>
+            </li>
+            <li class="flex items-center gap-4 text-on-surface group">
+              <span class="material-symbols-outlined text-primary text-xl">grid_view</span>
+              <span class="font-label-caps text-label-caps tracking-widest group-hover:text-primary transition-colors">BIM Integration</span>
+            </li>
+            <li class="flex items-center gap-4 text-on-surface group">
+              <span class="material-symbols-outlined text-primary text-xl">edit_note</span>
+              <span class="font-label-caps text-label-caps tracking-widest group-hover:text-primary transition-colors">Detail Specification</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Immersive Quote -->
+  <section class="relative py-section-gap w-full flex items-center justify-center bg-surface-container-lowest overflow-hidden border-y border-primary/5 reveal-on-scroll">
+    <div class="absolute inset-0 opacity-10 blueprint-grid"></div>
+    <div class="relative z-10 text-center px-margin-edge">
+      <span class="material-symbols-outlined text-primary text-5xl mb-gutter opacity-60">format_quote</span>
+      <blockquote class="font-headline-lg text-headline-lg md:text-[56px] italic text-on-surface max-w-5xl leading-tight tracking-tight">
+        Architecture is the thoughtful making of space.
+      </blockquote>
+      <p class="font-label-caps text-label-caps text-primary mt-gutter tracking-[0.5em] uppercase">— Louis Kahn</p>
+    </div>
+  </section>
+
+  <!-- Design Approach -->
+  <section class="w-full py-section-gap px-margin-edge bg-surface reveal-on-scroll">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+      <div>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-gutter">Architecture Beyond Structure</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-gutter leading-relaxed opacity-70">
+          We believe space should be felt, not just occupied. Our approach prioritizes the emotional spatial experience, using light as a primary building material.
+        </p>
+        <div class="space-y-10 mt-12">
+          <div class="border-t border-primary/10 pt-6 group">
+            <span class="font-label-caps text-label-caps text-primary tracking-[0.2em]">01. CONCEPTION</span>
+            <h4 class="font-headline-sm text-headline-sm text-on-surface mt-2 group-hover:text-primary transition-colors duration-500">Visionary Intent</h4>
+          </div>
+          <div class="border-t border-primary/10 pt-6 group">
+            <span class="font-label-caps text-label-caps text-primary tracking-[0.2em]">02. REFINEMENT</span>
+            <h4 class="font-headline-sm text-headline-sm text-on-surface mt-2 group-hover:text-primary transition-colors duration-500">Technical Excellence</h4>
+          </div>
+          <div class="border-t border-primary/10 pt-6 group">
+            <span class="font-label-caps text-label-caps text-primary tracking-[0.2em]">03. MATERIALITY</span>
+            <h4 class="font-headline-sm text-headline-sm text-on-surface mt-2 group-hover:text-primary transition-colors duration-500">Tactile Permanence</h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative flex items-center justify-center bg-surface-container-low overflow-hidden aspect-square lg:aspect-auto min-h-[600px] border border-primary/5">
+        <!-- Abstract Geometric Decoration -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+          <div class="w-80 h-80 border border-primary/40 rotate-45 transform translate-x-12 translate-y-12"></div>
+          <div class="w-[450px] h-[450px] border border-primary/20 rotate-12 absolute"></div>
+          <div class="w-full h-fine-line bg-gradient-to-r from-transparent via-primary/40 to-transparent rotate-[-30deg]"></div>
+        </div>
+        <div class="relative z-10 p-12 text-center bg-surface/40 backdrop-blur-3xl border border-primary/10">
+          <span class="font-headline-md text-headline-md italic block mb-4 text-on-surface">Geometric Integrity</span>
+          <p class="font-label-caps text-label-caps text-primary tracking-widest">METICULOUS SPATIAL ALIGNMENT</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fullscreen Showcase Simulation -->
+  <section class="w-full bg-surface-container-lowest border-t border-primary/10 reveal-on-scroll">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-fine-line bg-primary/10">
+      <div class="aspect-square overflow-hidden group relative">
+        <img alt="Showcase Detail" class="w-full h-full object-cover transition-all duration-[1500ms] group-hover:scale-110 contrast-[1.02] brightness-95 group-hover:brightness-90 grayscale-0 group-hover:grayscale" src="/assets/project-tropical.png">
+        <div class="absolute inset-0 bg-surface/60 opacity-0 group-hover:opacity-100 transition-all duration-700 flex items-center justify-center backdrop-blur-sm">
+          <span class="font-label-caps text-label-caps border border-primary px-8 py-3 tracking-[0.3em] text-primary">ATMOSPHERE</span>
+        </div>
+      </div>
+      
+      <div class="aspect-square overflow-hidden group relative">
+        <img alt="Showcase Detail" class="w-full h-full object-cover transition-all duration-[1500ms] group-hover:scale-110 contrast-[1.02] brightness-95 group-hover:brightness-90 grayscale-0 group-hover:grayscale" src="/assets/project-arcadia.png">
+        <div class="absolute inset-0 bg-surface/60 opacity-0 group-hover:opacity-100 transition-all duration-700 flex items-center justify-center backdrop-blur-sm">
+          <span class="font-label-caps text-label-caps border border-primary px-8 py-3 tracking-[0.3em] text-primary">SYMMETRY</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="w-full py-section-gap px-margin-edge bg-surface relative overflow-hidden reveal-on-scroll">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-primary/5 to-transparent pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <h2 class="font-display-lg text-[48px] lg:text-[72px] text-on-surface mb-gutter leading-tight">Let's Create Architecture That Lasts</h2>
+      <button class="mt-gutter group relative overflow-hidden px-16 py-6 bg-transparent border border-primary/50">
+        <span class="relative z-10 font-label-caps text-label-caps text-primary group-hover:text-surface transition-colors duration-500 tracking-[0.4em]">START YOUR PROJECT</span>
+        <div class="absolute inset-0 bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out"></div>
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w-full px-margin-edge py-section-gap flex flex-col gap-gutter bg-surface-container-lowest border-t border-primary/20 reveal-on-scroll">
+    <div class="flex flex-col lg:flex-row justify-between items-start gap-gutter">
+      <div class="space-y-8 w-full lg:w-auto flex flex-col items-center lg:items-start">
+        <img alt="ORZORA Architecture" class="h-[80px] w-auto object-contain brightness-110" src="/assets/footer-logo.png">
+        <p class="font-body-md text-body-md text-on-surface-variant max-w-md text-center lg:text-left">
+          The authority in luxury spatial design. We translate complex visions into permanent architectural reality through structural fluidity and material excellence.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-gutter lg:gap-section-gap">
+        <div class="space-y-4">
+          <h6 class="font-label-caps text-label-caps text-primary">STUDIO</h6>
+          <nav class="flex flex-col gap-2">
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Journal</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Awards</a>
+          </nav>
+        </div>
+        <div class="space-y-4">
+          <h6 class="font-label-caps text-label-caps text-primary">CONNECT</h6>
+          <nav class="flex flex-col gap-2">
+            <a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all duration-500 hover:tracking-[0.2em]" href="#">INSTAGRAM</a>
+            <a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-all duration-500 hover:tracking-[0.2em]" href="#">LINKEDIN</a>
+          </nav>
+        </div>
+        <div class="space-y-4 col-span-2 md:col-span-1">
+          <h6 class="font-label-caps text-label-caps text-primary">LEGAL</h6>
+          <nav class="flex flex-col gap-2">
+            <a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">PRIVACY</a>
+            <a class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">TERMS</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    
+    <div class="pt-gutter border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-label-caps text-[10px] text-on-surface-variant/50 tracking-widest uppercase">© 2024 ORZORA ARCHITECTURE. ALL RIGHTS RESERVED.</p>
+      <p class="font-label-caps text-[10px] text-on-surface-variant/50 tracking-widest uppercase">DESIGNED IN LONDON • REALIZED WORLDWIDE</p>
+    </div>
+  </footer>
+
+  <!-- Script Entry Point -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
