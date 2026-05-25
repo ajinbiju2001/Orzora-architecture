@@ -111,32 +111,30 @@
     }
     /* Custom premium Toast Notification */
     .toast-container {
-      position: fixed;
-      top: 6rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 9999;
+      margin-top: 1.5rem;
+      width: 100%;
+      max-width: 32rem;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      pointer-events: none;
       align-items: center;
-      width: max-content;
-      max-width: 90vw;
+      z-index: 10;
     }
     .toast-notification {
-      pointer-events: auto;
-      background: rgba(18, 20, 20, 0.95);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(229, 196, 151, 0.25);
+      width: 100%;
+      background: rgba(18, 20, 20, 0.85);
+      backdrop-filter: blur(25px);
+      border: 1px solid rgba(229, 196, 151, 0.15);
       color: #e3e2e2;
-      padding: 1rem 1.5rem;
+      padding: 1.25rem 1.5rem;
       border-radius: 4px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      transform: translateY(-50px);
+      text-align: center;
+      gap: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transform: translateY(-15px);
       opacity: 0;
       transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     }
@@ -233,7 +231,7 @@
     </div>
     
     <!-- Right Side: Inquiry Form -->
-    <div class="w-full md:w-1/2 mt-12 md:mt-0 flex items-center justify-center md:justify-start reveal-on-scroll" data-delay="500">
+    <div class="w-full md:w-1/2 mt-12 md:mt-0 flex flex-col items-center md:items-start justify-center reveal-on-scroll" data-delay="500">
       <div class="form-glass p-6 md:p-8 w-full max-w-lg relative shadow-2xl transition-transform duration-700 ease-out" id="form-container">
         <!-- Geometric Corner Accents with Parallax -->
         <div class="absolute -top-1 -left-1 w-6 h-6 border-t border-l border-primary accent-parallax"></div>
@@ -288,6 +286,7 @@
           </button>
         </form>
       </div>
+      <div id="toast-container" class="toast-container"></div>
     </div>
   </main>
 
@@ -393,10 +392,8 @@
     const submitBtnText = submitBtn.querySelector('span');
     const originalBtnText = submitBtnText.textContent;
     
-    // Create toast container
-    const toastContainer = document.createElement('div');
-    toastContainer.className = 'toast-container';
-    document.body.appendChild(toastContainer);
+    // Target toast container
+    const toastContainer = document.getElementById('toast-container');
     
     function showToast(title, message, isSuccess = true) {
       const toast = document.createElement('div');
