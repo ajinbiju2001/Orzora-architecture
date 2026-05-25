@@ -96,9 +96,55 @@
       pointer-events: none;
       z-index: 1;
     }
+    /* Custom premium Toast Notification */
+    .toast-container {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+    }
+    .toast-notification {
+      pointer-events: auto;
+      background: rgba(18, 20, 20, 0.95);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(229, 196, 151, 0.25);
+      color: #e3e2e2;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .toast-notification.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .toast-icon {
+      color: #e5c497;
+      font-size: 24px;
+    }
+    .toast-content {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+    .toast-title {
+      font-family: 'Bodoni Moda', serif;
+      font-weight: 600;
+      color: #e5c497;
+      margin-bottom: 2px;
+    }
   </style>
-  <script type="module" crossorigin src="./assets/main-DKkC_HoI.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-DsRSD2Gm.css">
+  <script type="module" crossorigin src="./assets/main-ByJd7Qly.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-CZSWSI5Z.css">
 </head>
 <body class="overflow-x-hidden font-body-md bg-surface text-on-surface">
   
@@ -178,26 +224,30 @@
         <div class="absolute -top-1 -left-1 w-6 h-6 border-t border-l border-primary accent-parallax"></div>
         <div class="absolute -bottom-1 -right-1 w-6 h-6 border-b border-r border-primary accent-parallax"></div>
         
-        <form class="space-y-6" onsubmit="event.preventDefault(); alert('Inquiry Sent Successfully.');">
+        <form id="contact-form" class="space-y-6">
+          <input type="hidden" name="access_key" value="12575b95-5f91-4b1c-a190-836ed07a25e2">
+          <input type="hidden" name="subject" value="New Inquiry from ORZORA Contact Form">
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+          
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div class="relative group input-group">
               <label class="font-label-caps text-label-caps text-outline block mb-1">FULL NAME</label>
-              <input class="w-full bg-transparent border-0 border-b border-outline-variant py-2 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md" placeholder="Full Name" type="text" required>
+              <input name="name" class="w-full bg-transparent border-0 border-b border-outline-variant py-2 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md" placeholder="Full Name" type="text" required>
             </div>
             <div class="relative group input-group">
               <label class="font-label-caps text-label-caps text-outline block mb-1">EMAIL ADDRESS</label>
-              <input class="w-full bg-transparent border-0 border-b border-outline-variant py-2 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md" placeholder="Email Address" type="email" required>
+              <input name="email" class="w-full bg-transparent border-0 border-b border-outline-variant py-2 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md" placeholder="Email Address" type="email" required>
             </div>
           </div>
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div class="relative group input-group">
               <label class="font-label-caps text-label-caps text-outline block mb-1">PHONE NUMBER</label>
-              <input class="w-full bg-transparent border-0 border-b border-outline-variant py-2 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md" placeholder="Phone Number" type="tel">
+              <input name="phone" class="w-full bg-transparent border-0 border-b border-outline-variant py-2 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md" placeholder="Phone Number" type="tel">
             </div>
             <div class="relative group input-group">
               <label class="font-label-caps text-label-caps text-outline block mb-1">PROJECT TYPE</label>
-              <select class="w-full bg-transparent border-0 border-b border-outline-variant py-2 px-0 focus:ring-0 focus:border-primary text-on-surface appearance-none font-body-md text-body-md" style="background-image: none;">
+              <select name="project_type" class="w-full bg-transparent border-0 border-b border-outline-variant py-2 px-0 focus:ring-0 focus:border-primary text-on-surface appearance-none font-body-md text-body-md" style="background-image: none;">
                 <option class="bg-surface text-on-surface">Luxury Residence</option>
                 <option class="bg-surface text-on-surface">Interior Architecture</option>
                 <option class="bg-surface text-on-surface">Commercial Space</option>
@@ -210,12 +260,12 @@
           
           <div class="relative group input-group">
             <label class="font-label-caps text-label-caps text-outline block mb-1">PROJECT BUDGET</label>
-            <input class="w-full bg-transparent border-0 border-b border-outline-variant py-2 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md" placeholder="Project Budget" type="text">
+            <input name="project_budget" class="w-full bg-transparent border-0 border-b border-outline-variant py-2 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md" placeholder="Project Budget" type="text">
           </div>
           
           <div class="relative group input-group">
             <label class="font-label-caps text-label-caps text-outline block mb-1">MESSAGE</label>
-            <textarea class="w-full bg-transparent border-0 border-b border-outline-variant py-2 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md resize-none" placeholder="Message" rows="3" required></textarea>
+            <textarea name="message" class="w-full bg-transparent border-0 border-b border-outline-variant py-2 px-0 focus:ring-0 focus:border-primary text-on-surface placeholder:text-surface-variant font-body-md text-body-md resize-none" placeholder="Message" rows="3" required></textarea>
           </div>
           
           <button class="w-full py-4 border border-primary btn-metallic group transition-all" type="submit">
@@ -320,6 +370,91 @@
       accents.forEach(acc => {
         acc.style.transform = `translate(${moveX * 0.8}px, ${moveY * 0.8}px)`;
       });
+    });
+
+    // Web3Forms Form Submission Handler
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const submitBtnText = submitBtn.querySelector('span');
+    const originalBtnText = submitBtnText.textContent;
+    
+    // Create toast container
+    const toastContainer = document.createElement('div');
+    toastContainer.className = 'toast-container';
+    document.body.appendChild(toastContainer);
+    
+    function showToast(title, message, isSuccess = true) {
+      const toast = document.createElement('div');
+      toast.className = 'toast-notification';
+      toast.innerHTML = `
+        <span class="material-symbols-outlined toast-icon">${isSuccess ? 'check_circle' : 'error'}</span>
+        <div class="toast-content">
+          <div class="toast-title">${title}</div>
+          <div>${message}</div>
+        </div>
+      `;
+      toastContainer.appendChild(toast);
+      
+      // Force reflow
+      toast.offsetHeight;
+      
+      toast.classList.add('show');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+          toast.remove();
+        }, 500);
+      }, 5000);
+    }
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Update button state
+      submitBtn.disabled = true;
+      submitBtnText.textContent = 'SENDING...';
+      submitBtnText.style.letterSpacing = '0.4em';
+      
+      const formData = new FormData(contactForm);
+      
+      // Honeypot check
+      if (formData.get('botcheck') === 'on' || formData.get('botcheck') === 'true') {
+        return;
+      }
+      
+      const object = Object.fromEntries(formData);
+      // Delete honeypot before submitting
+      delete object.botcheck;
+      
+      const json = JSON.stringify(object);
+      
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: json
+        });
+        
+        const result = await response.json();
+        
+        if (response.status === 200 && result.success) {
+          showToast('Inquiry Received', 'Thank you. We will contact you shortly.', true);
+          contactForm.reset();
+        } else {
+          showToast('Submission Failed', result.message || 'Please try again later.', false);
+        }
+      } catch (error) {
+        console.error(error);
+        showToast('Network Error', 'Unable to connect. Please check your connection.', false);
+      } finally {
+        // Restore button state
+        submitBtn.disabled = false;
+        submitBtnText.textContent = originalBtnText;
+      }
     });
   </script>
 
